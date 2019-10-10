@@ -1,0 +1,9 @@
+{
+  "name": "nodejs-microservices",
+  "version": "1.0.0",
+  "author": "taylor <taylor@baremetalcloud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.17.0"
+  }
+}
