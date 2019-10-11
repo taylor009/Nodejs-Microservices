@@ -6,19 +6,22 @@ module.exports = {
   apps : [
       {
         name: 'Gateway',
-        script: basePath + '/gateway/server.js',
-        env: {
-            NODE_ENV: 'development',
-            PORT: 3001
-        }
+          script: basePath + '/gateway/server.js',
+          watch: true,
+          env: {
+              NODE_ENV: 'development',
+              PORT: 3001,
+              SERVICE_DB_PORT: 4001
+          }
       },
     {
       name: 'DB Service',
-      script: basePath + '/database_service/server.js',
-      env: {
-        NODE_ENV: 'development',
-        PORT: 4001
-      }
+        script: basePath + '/database_service/server.js',
+        watch: true,
+        env: {
+            NODE_ENV: 'development',
+            PORT: 4001
+        }
     }
   ],
 };
