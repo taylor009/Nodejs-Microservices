@@ -4,6 +4,8 @@ const {ApolloServer} = require('apollo-server-express');
 const bodyParser = require('body-parser');
 const {makeExecutableSchema} = require('graphql-tools');
 
+const {port} = require('./config');
+
 const typeDefs = `
     type Query {hey: String!}
 `;
@@ -25,4 +27,4 @@ app.use(bodyParser.json());
 const server = new ApolloServer({schema});
 server.applyMiddleware({app,path:'/gq'});
 
-app.listen(3000, () => console.log(`Listening on port 3000`));
+app.listen(port, () => console.log(`Listening on port ${port}`));
