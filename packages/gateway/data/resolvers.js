@@ -6,10 +6,15 @@ const getMails = async () =>
     return (await axios.get(`http://localhost:4001/mails`)).data.payload;
 };
 
+const getSingleMail = async id =>
+{
+   return (await axios.get(`http://localhost:4001/mails/${id}`)).data.payload;
+};
+
 module.exports = {
     Query: {
         mails: () => getMails(),
-        mail: (_, args) => mockMails[0]
+        mail: (_, {id}) => getSingleMail(id)
     },
     Mutation: {
         mail: (_, args) => {
