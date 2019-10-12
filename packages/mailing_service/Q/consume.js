@@ -1,11 +1,10 @@
 'use strict';
 const amqp = require('amqplib/callback_api');
-const {q: {uri}} = require('../config');
+const { q: { uri } } = require('../config');
 
-// const sendMail = require('../handler/sendMail');
+const sendMail = require('../handler/sendMail');
 
-module.exports = () =>
-{
+module.exports = () => {
     const q = 'test_q';
 
     amqp.connect(uri, (err, conn) => {
@@ -31,7 +30,7 @@ module.exports = () =>
 
                     console.log('I RECEIVED A MAIL!!!', mail);
 
-                    // sendMail(mail);
+                    sendMail(mail);
 
                     ch.ack(msg);
                 },
@@ -40,5 +39,6 @@ module.exports = () =>
         });
     });
 };
+
 
 

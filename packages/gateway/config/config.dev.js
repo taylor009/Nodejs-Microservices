@@ -7,6 +7,6 @@ module.exports = {
     port: SERVICE_DB_PORT || 4000
   },
   q: {
-    uri: Q_URI || 'amqp://jsvibydg:UMx-2ByfjIzmWdcrmyICOCS1T8yMTjb1@porpoise.rmq.cloudamqp.com/jsvibydg'
+    uri: Q_URI || 'NO HARD CODING'
   }
 };
