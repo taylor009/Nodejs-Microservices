@@ -1,6 +1,6 @@
 # Nodejs-Microservices
 
-#####This project is a demonstration of micro-service architecture with nodejs.
+This project is a demonstration of micro-service architecture with nodejs.
 ##
 
 ###This project makes use of these essential package that aid in nodejs micro-service development.
