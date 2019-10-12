@@ -1,36 +1,29 @@
 'use strict';
 const amqp = require('amqplib/callback_api');
-const {q: {uri}} = require('../config');
+const { q: { uri } } = require('../config');
 
 const q = 'test_q';
-let channel;
+let channel = null;
 
-
-amqp.connect(uri, (err, conn) =>
-{
+amqp.connect(uri, (err, conn) => {
     if (err) throw new Error(err);
 
-    conn.createChannel((err, ch) =>
-    {
+    conn.createChannel((err, ch) => {
         if (err) throw new Error(err);
 
-        ch.assertQueue(q, {durable: true});
+        ch.assertQueue(q, { durable: true });
 
-        ch.sendToQueue(q, Buffer.from('Hello Test Consumer'));
+        channel = ch;
     });
-
-    setTimeout(() =>
-    {
-        conn.close();
-
-        process.exit(0);
-    }, 1000)
 });
 
-const pushToMessageQ = msg =>
-{
+const pushToMessageQ = msg => {
     if (!channel) setTimeout(pushToMessageQ(msg), 1000);
-    channel.sendToQueue(q, Buffer.from(msg));
 
-    return {m: 'done'};
+    channel.sendToQueue(q, Buffer.from(msg));
+    return { m: 'done' };
+};
+
+module.exports = {
+    pushToMessageQ
 };
