@@ -1,0 +1,11 @@
+{
+  "name": "mailing_service",
+  "version": "1.0.0",
+  "description": "This is the mailing service",
+  "main": "index.js",
+  "author": "Taylor Gagne",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.5.5"
+  }
+}
