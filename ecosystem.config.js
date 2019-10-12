@@ -11,7 +11,9 @@ module.exports = {
           env: {
               NODE_ENV: 'development',
               PORT: 3001,
-              SERVICE_DB_PORT: 4001
+              SERVICE_DB_PORT: 4001,
+              Q_URI:
+                ''
           }
       },
     {
