@@ -1,9 +1,9 @@
 # Nodejs-Microservices
 
-This project is a demonstration of micro-service architecture with nodejs.
+##### This project is a demonstration of micro-service architecture with nodejs.
 ##
 
-###This project makes use of these essential package that aid in nodejs micro-service development.
+### This project makes use of these essential package that aid in nodejs micro-service development.
 
 * [Lerna.js](https://lerna.js.org/)
 * [PM2 eco-system](http://pm2.keymetrics.io/docs/usage/application-declaration/)
